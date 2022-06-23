@@ -1,0 +1,54 @@
+.Main {
+    margin-top: 60px;
+    padding-bottom: 20px;
+    background: #010811bd;
+    animation-name: pulse;
+    backdrop-filter: saturate(1);
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter {
+    margin-top: 20px;
+}
+
+.filter .search-bar {
+    font-size: 20px;
+    font-weight: 600;
+    width: 600px;
+    border-radius: 50px;
+    border: 2px solid var(--accent-clr);
+    padding: 5px 20px;
+    color: var(--accent-clr);
+}
+
+.filter .search-bar:focus {
+    outline: none;
+}
+
+.api-output {
+    padding-top: 10px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+ul {
+    padding: 0 !important;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-size: 16px;
+}
+
+@keyframes pulse {
+    0%   {backdrop-filter: saturate(1);}
+    25%  {backdrop-filter: saturate(1.8);}
+    50%  {backdrop-filter: saturate(1.3);}
+    100% {backdrop-filter: saturate(1);}
+  }
