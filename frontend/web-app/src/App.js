@@ -1,11 +1,9 @@
 import './App.css';
-import Navbar from './Navbar';
-import Main from './Main';
+import Main from './views/Main';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Main />
     </div>
   );

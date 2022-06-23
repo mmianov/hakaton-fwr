@@ -1,8 +1,8 @@
 import './Developer.css';
 
-const DeveloperBody = () => {
+const Developer = () => {
     return (
-        <div className="Developer-body">
+        <div className="Developer">
             <div className='main-container'>
                 <div className='form'>
                     <h2>Publikuj alerty bezpieczeństwa bezpośrednio na <span className='outer'><span className='inner'>Cyber</span>ly</span> za pomocą naszego API!</h2>
@@ -13,4 +13,4 @@ const DeveloperBody = () => {
     );
 }
 
-export default DeveloperBody;
+export default Developer;

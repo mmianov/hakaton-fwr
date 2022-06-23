@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Newsletter.css';
 import axios from 'axios';
 
-function NewsletterBody() {
+function Newsletter() {
 
     let postData = {
         "author": "front-app",
@@ -17,10 +17,12 @@ function NewsletterBody() {
     const [emailInput, setEmailInput] = useState("");
     const [isEmailCorrect, setIsEmailCorrect] = useState(true);
     const [isSent, setIsSent] = useState(false);
+    const [isBeforeRequest, setIsBeforeRequest] = useState(true);
     
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSent(false);
+        setIsBeforeRequest(false);
         if (!emailInput.includes("@")) {
             setIsEmailCorrect(false);
         } else {
@@ -47,7 +49,7 @@ function NewsletterBody() {
                         <input placeholder='Podaj email' type="text" className='email-input' value={emailInput} onChange={(e) => setEmailInput(e.target.value)}></input>
                         <input className='submit-btn' type="submit" value="Zapisz się"></input>
                     </form>
-                    <p className='email-check'>{!isEmailCorrect ? "Proszę wprowadzić poprawny adres email" : (isSent && "Zapisano do newslettera!")}</p>
+                    <p className={(!isEmailCorrect || !isSent) ? 'email-check incorrect' : 'email-check correct'}>{!isEmailCorrect ? "Proszę wprowadzić poprawny adres email" : (isSent ? "Zapisano do newslettera!" : (!isBeforeRequest && "Wystąpił błąd, spróbuj ponownie później"))}</p>
                     <p className='agreement'>Klikając przycisk „Zapisz się” wyrażasz zgodę na otrzymywanie drogą mailową materiałów informacyjnych przekazywanych przez Cyberly. Możesz w dowolnym czasie cofnąć zgodę na newsletter. W celu rezygnacji z subskrypcji należy skorzystać z linku umieszczonego w każdym newsletterze lub poinformować nas poprzez formularz kontaktowy.</p>
                 </div>
             </div>
@@ -55,4 +57,4 @@ function NewsletterBody() {
     );
 }
 
-export default NewsletterBody;
+export default Newsletter;

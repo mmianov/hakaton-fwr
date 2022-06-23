@@ -1,9 +1,8 @@
 import './Main.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Post from './Post';
+import Post from '../components/Post';
 import Spinner from 'react-bootstrap/Spinner';
-import Sort from './Sort';
 import React from "react";
 
 function Main() {
@@ -62,7 +61,7 @@ function Main() {
     }
 
     return (
-        <div className='Main'>
+        <div className={data.length ? 'Main' : 'Main loading'}>
             {data.length!==0 && <div className='filter'>
                 <input className='search-bar' type="text" placeholder='Szukaj...' value={filterInput} onChange={(e) => {setFilterInput(e.target.value)}}/>
             </div>}
