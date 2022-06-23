@@ -8,7 +8,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from scrapers import parse_orange_alerts, parse_nask_alerts
 from flask_mail import Mail, Message
 import secrets
-import json
+from twitter_scraper import payload
 
 app = Flask(__name__)
 # database config
@@ -21,8 +21,8 @@ CORS(app)
 # mail server
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'miodek099@gmail.com'
-app.config['MAIL_PASSWORD'] = 'nYitM7aJKMabccTvCX7Y'
+app.config['MAIL_USERNAME'] = '***'
+app.config['MAIL_PASSWORD'] = '***'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -101,7 +101,8 @@ def get_orange_alerts_data():
     # nask_alerts = parse_nask_alerts(80)
     # for alert in nask_alerts:
     #     add_to_database(alert)
-
+    # for twitter_alert in payload:
+    #     add_to_database(twitter_alert)
 
 def send_newsletter():
     msg = Message('Hello', sender='miodek099@gmail.com', recipients=['mateuszmianovany@gmail.com'])
@@ -189,8 +190,7 @@ if __name__ == '__main__':
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=get_orange_alerts_data, trigger="interval", seconds=15)
     scheduler.start()
-    #insert_new_user('front-app')
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)
 
 
 

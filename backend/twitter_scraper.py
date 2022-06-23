@@ -4,7 +4,7 @@ import tweepy
 import pprint
 import json
 from yaml.loader import SafeLoader
-
+import requests
 
 class TwitterScraper():
     def __init__(self, csv_to_read, yaml_to_read):
@@ -126,8 +126,8 @@ class TwitterScraper():
 
         for temp_dict in self.to_json_filtered_list:
             author = temp_dict['includes']['users'][0]['name']
-            username = temp_dict['includes']['users'][0]['username']
-            author_link = "https://twitter.com/" + username
+            username = "@"+temp_dict['includes']['users'][0]['username']
+            author_link = "https://twitter.com/" + temp_dict['includes']['users'][0]['username']
             avatar = temp_dict['includes']['users'][0]['profile_image_url']
 
             avatar_strip = avatar.split("_normal.jpg", 1)[0]
