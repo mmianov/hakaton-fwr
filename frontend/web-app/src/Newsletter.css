@@ -31,11 +31,19 @@
 }
 
 .email-check {
+    color: rgb(4, 185, 13);
     min-height: 24px;
-    color: var(--accent-clr);
     font-weight: 600;
     margin: 0;
 }
+
+.email-check.incorrect{
+    color: rgb(199, 47, 47);
+}
+
+/* .email-check.correct{
+    color: rgb(4, 185, 13);
+} */
 
 .form form {
     margin-top: 30px;

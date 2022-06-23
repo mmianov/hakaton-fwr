@@ -5,6 +5,7 @@ import App from './App';
 import Newsletter from './Newsletter';
 import Navbar from './Navbar';
 import Developer from './Developer';
+import PageNotFound from './PageNotFound';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,12 +14,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route index element={<App />} />
         <Route path="/alerts" element={ <App />} />
         <Route path="/newsletter" element={ <Newsletter />} />
         <Route path="/developer" element={ <Developer />} />
-        <Route path="/contact" element={ <App />} />
+        {/* <Route path="/contact" element={ <Contact />} /> */}
+        <Route path="/*" element={ <PageNotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
