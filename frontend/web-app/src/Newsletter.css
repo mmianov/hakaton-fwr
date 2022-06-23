@@ -1,0 +1,106 @@
+.Newsletter-body {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    padding-bottom: 20px;
+    background: #010811bd;
+    animation-name: pulse;
+    backdrop-filter: saturate(1);
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .form {
+    max-width: 600px;
+    background-color: var(--light-clr);
+    padding: 20px 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-check {
+    min-height: 24px;
+    color: var(--accent-clr);
+    font-weight: 600;
+    margin: 0;
+}
+
+.form form {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.main-container .form h2{
+    color: var(--accent-clr);
+    font-weight: 700;
+    display: inline;
+    padding: 10px 0;
+}
+
+.main-container .form .info{
+    color: var(--dark-clr);
+    margin: 0;
+    text-align: center;
+}
+
+.email-input {
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: var(--dark-clr);
+    border: 2px solid var(--accent-clr);
+    margin-right: 20px;
+    transition: ease-in-out 150ms;
+}
+
+.email-input:focus {
+    outline: none;
+    transform: scale(1.02);
+}
+
+.submit-btn {
+    border: 2px solid var(--accent-clr);
+    color: var(--accent-clr);
+    background-color: var(--light-clr);
+    text-transform: uppercase;
+    border-radius: 40px;
+    padding: 5px 10px;
+    font-weight: 700;
+    transition: ease-in-out 150ms;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-clr);
+    color: var(--light-clr);
+}
+
+.submit-btn:focus {
+    outline: none;
+}
+
+.agreement {
+    color: var(--dark-clr);
+    margin: 0;
+    padding-top: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: justify;
+}
+
+@keyframes pulse {
+    0%   {backdrop-filter: saturate(1);}
+    25%  {backdrop-filter: saturate(1.8);}
+    50%  {backdrop-filter: saturate(1.3);}
+    100% {backdrop-filter: saturate(1);}
+  }
