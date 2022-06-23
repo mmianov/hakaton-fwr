@@ -1,7 +1,7 @@
 import './Main.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Post from './Post';
+import Post from '../components/Post';
 import Spinner from 'react-bootstrap/Spinner';
 import React from "react";
 
